@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Западно-Алтайский государственный природный заповедник | Батыс Алтай қорығы</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            600: '#16a34a',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        altai: {
+                            blue: '#1e3a8a',
+                            darkBlue: '#0f172a',
+                            gold: '#d97706',
+                            emerald: '#047857',
+                            slate: '#334155',
+                            cream: '#fdfbf7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(15,23,42,0.65) 0%, rgba(15,23,42,0.92) 100%), 
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #047857;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-altai-cream text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800/50 text-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow-lg shadow-emerald-600/30 group-hover:bg-emerald-500 transition-colors">
+                        <i class="fa-solid fa-mountain-sun text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-lg leading-none block">Западно-Алтайский</span>
+                        <span class="text-xs text-emerald-400 font-medium tracking-wider uppercase block mt-0.5">Государственный Заповедник</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-slate-300 hover:text-emerald-400 transition-colors">О заповеднике</a>
+                    <a href="#geography" class="text-slate-300 hover:text-emerald-400 transition-colors">География</a>
+                    <a href="#nature" class="text-slate-300 hover:text-emerald-400 transition-colors">Биоразнообразие</a>
+                    <a href="#unesco" class="text-slate-300 hover:text-emerald-400 transition-colors">ЮНЕСКО & Охрана</a>
+                    <a href="#tourism" class="text-slate-300 hover:text-emerald-400 transition-colors">Экотуризм</a>
+                    <a href="#contacts" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold transition-all shadow-md shadow-emerald-600/20">
+                        Контакты
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none text-xl p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block text-slate-300 hover:text-emerald-400 py-2 text-base">О заповеднике</a>
+            <a href="#geography" class="mobile-link block text-slate-300 hover:text-emerald-400 py-2 text-base">География & Климат</a>
+            <a href="#nature" class="mobile-link block text-slate-300 hover:text-emerald-400 py-2 text-base">Биоразнообразие</a>
+            <a href="#unesco" class="mobile-link block text-slate-300 hover:text-emerald-400 py-2 text-base">ЮНЕСКО & Охрана</a>
+            <a href="#tourism" class="mobile-link block text-slate-300 hover:text-emerald-400 py-2 text-base">Экотуризм</a>
+            <a href="#contacts" class="mobile-link block text-center bg-emerald-600 text-white py-2.5 rounded-lg font-semibold mt-2">Контакты</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative hero-bg min-h-screen flex items-center pt-24 pb-16 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/40 backdrop-blur-md px-3 py-1.5 rounded-full text-emerald-300 text-xs sm:text-sm font-medium mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Батыс Алтай қорығы • IUCN Ia Category</span>
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl font-bold leading-tight mb-6 tracking-tight">
+                    Первозданная <span class="text-emerald-400 italic">черневая тайга</span> Рудного Алтая
+                </h1>
+                <p class="text-slate-300 text-lg sm:text-xl leading-relaxed mb-8">
+                    Западно-Алтайский государственный природный заповедник — уникальный биосферный резерват ЮНЕСКО площадью 86 122 га, сохраняющий горно-таёжные экосистемы и реликтовые леса Казахстана.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#about" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center space-x-2">
+                        <span>Узнать больше</span>
+                        <i class="fa-solid fa-arrow-down text-sm"></i>
+                    </a>
+                    <button onclick="openModal('mapModal')" class="bg-slate-800/80 hover:bg-slate-800 text-white border border-slate-700 font-semibold px-6 py-3.5 rounded-xl backdrop-blur-sm transition-all flex items-center space-x-2">
+                        <i class="fa-solid fa-map-marked-alt text-emerald-400"></i>
+                        <span>Карта заповедника</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- KEY NUMBERS METRICS CARD GRID -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-16 pt-12 border-t border-slate-700/60">
+                <div class="bg-slate-900/60 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-700/50">
+                    <div class="text-3xl sm:text-4xl font-bold text-emerald-400 font-serif mb-1">86 122</div>
+                    <div class="text-xs sm:text-sm text-slate-300">Гектаров строго охраняемой территории</div>
+                </div>
+                <div class="bg-slate-900/60 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-700/50">
+                    <div class="text-3xl sm:text-4xl font-bold text-amber-400 font-serif mb-1">1992</div>
+                    <div class="text-xs sm:text-sm text-slate-300">Год основания заповедника</div>
+                </div>
+                <div class="bg-slate-900/60 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-700/50">
+                    <div class="text-3xl sm:text-4xl font-bold text-emerald-400 font-serif mb-1">872+</div>
+                    <div class="text-xs sm:text-sm text-slate-300">Видов сосудистых растений</div>
+                </div>
+                <div class="bg-slate-900/60 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-700/50">
+                    <div class="text-3xl sm:text-4xl font-bold text-sky-400 font-serif mb-1">2020</div>
+                    <div class="text-xs sm:text-sm text-slate-300">Статус резервата ЮНЕСКО</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-emerald-600 font-bold mb-3">О Заповеднике</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-bold text-slate-900">Официальные сведения и географическое положение</p>
+                <div class="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-slate-600 leading-relaxed">
+                    <p class="text-lg text-slate-800 font-medium">
+                        Западно-Алтайский государственный природный заповедник учреждён постановлением Верховного Совета Республики Казахстан <strong class="text-slate-900">3 июля 1992 года</strong>.
+                    </p>
+                    <p>
+                        Территория расположена на северо-восточной границе Восточно-Казахстанской области на землях <strong>Риддерского и Алтайского районов</strong>. Заповедник охватывает важнейшие горные хребты: Ивановский, Линейский, Холзун и Коксинский, защищая истоки крупнейших рек региона — Белой и Чёрной Убы, Тургусуна и Барсука.
+                    </p>
+                    <p>
+                        Главная цель создания — сохранение «чёрневой тайги», уникальных лиственных и горно-таёжных лесов Западного Алтая. На территории установлен строжайший режим охраны (категория IUCN Ia).
+                    </p>
+
+                    <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-start space-x-3 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-shield-halved text-emerald-600 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Статус охраны</h4>
+                                <p class="text-xs text-slate-600">Строгий природный заповедник (IUCN Ia)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-file-pdf text-emerald-600 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Документация</h4>
+                                <p class="text-xs text-slate-600">Официальные карты доступны для скачивания</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Cards Panel -->
+                <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-2xl relative overflow-hidden border border-slate-800">
+                    <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-emerald-600/20 rounded-full blur-3xl"></div>
+                    <h3 class="font-serif text-2xl font-bold text-emerald-400 mb-6">Сводка ключевых данных</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400 text-sm">Казахское название</span>
+                            <span class="font-semibold text-right">Батыс Алтай қорығы</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400 text-sm">Площадь</span>
+                            <span class="font-semibold text-right">86 122 гектара</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400 text-sm">Дата основания</span>
+                            <span class="font-semibold text-right">3 июля 1992 года</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400 text-sm">Административное подчинение</span>
+                            <span class="font-semibold text-right">ВКО (Риддер, Алтай)</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-slate-400 text-sm">Международный статус</span>
+                            <span class="font-semibold text-amber-400 text-right">Резерват ЮНЕСКО (с 2020)</span>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('mapModal')" class="w-full mt-6 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 rounded-xl transition-all text-center flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-map"></i>
+                        <span>Открыть интерактивную карту</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GEOGRAPHY & CLIMATE -->
+    <section id="geography" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-emerald-600 font-bold mb-3">Рельеф и Климат</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-bold text-slate-900">Уникальный горный ландшафт</p>
+                <div class="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- TAB CONTROLS -->
+            <div class="flex justify-center mb-10">
+                <div class="bg-white p-1.5 rounded-2xl shadow-sm border border-slate-200 inline-flex space-x-2">
+                    <button id="tab-relief-btn" onclick="switchTab('relief')" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-emerald-600 text-white shadow-md">
+                        <i class="fa-solid fa-mountain mr-2"></i>Рельеф и вершины
+                    </button>
+                    <button id="tab-climate-btn" onclick="switchTab('climate')" class="px-5 py-2.5 rounded-xl font-medium text-sm text-slate-600 hover:text-slate-900 transition-all">
+                        <i class="fa-solid fa-snowflake mr-2"></i>Климат и снег
+                    </button>
+                    <button id="tab-rivers-btn" onclick="switchTab('rivers')" class="px-5 py-2.5 rounded-xl font-medium text-sm text-slate-600 hover:text-slate-900 transition-all">
+                        <i class="fa-solid fa-water mr-2"></i>Водные ресурсы
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT PANELS -->
+            <div id="tab-relief" class="tab-content grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-mountain text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Массив «Чёрный узел»</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Центральный высокогорный узел заповедника, вершины которого достигают высоты <strong class="text-slate-800">~2600 метров</strong> над уровнем моря.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-layer-group text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Плато Линейского Белка</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Высочайшая точка — <strong class="text-slate-800">2598 м</strong>. Высоты выше 2200–2500 м практически полностью безлесны, представляя собой альпийские тундры.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-sky-100 text-sky-700 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-route text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Горные хребты</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Территория включает 4 великих хребта: <strong class="text-slate-800">Ивановский, Линейский, Холзун и Коксинский</strong> с резкими альпийскими формами рельефа.
+                    </p>
+                </div>
+            </div>
+
+            <div id="tab-climate" class="tab-content hidden grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-temperature-arrow-down text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Температурный амплитуд</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Климат резко-континентальный: от <strong class="text-blue-600">–50 °C</strong> суровой зимой до <strong class="text-amber-600">+35 °C</strong> в жаркие летние месяцы.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-cyan-100 text-cyan-700 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-cloud-showers-heavy text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Осадки</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        В среднем выпадает 400–900 мм осадков в год, а в высокогорных районах — рекордные <strong class="text-slate-800">до 2500–3800 мм</strong>.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-snowflake text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Снеговой покров</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Снег держится до <strong class="text-slate-800">6 месяцев в году</strong>, а толщина снежного покрова в лощинах местами достигает <strong class="text-slate-800">2–2.5 метров</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div id="tab-rivers" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 card-hover flex items-start space-x-6">
+                    <div class="w-14 h-14 bg-sky-100 text-sky-700 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold mb-2 text-slate-900">Истоки горно-таёжных рек</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                            Заповедник является важнейшим гидрологическим узлом Рудного Алтая. Здесь берут начало кристально чистые реки: <strong class="text-slate-800">Белая Уба, Чёрная Уба, Тургусун и Барсук</strong>.
+                        </p>
+                        <span class="inline-block bg-sky-50 text-sky-700 text-xs px-3 py-1 rounded-full font-medium">Главный водный бассейн ВКО</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 card-hover flex items-start space-x-6">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-fish"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold mb-2 text-slate-900">Ихтиофауна & Таймень</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                            Реки заповедника служат естественным нерестилищем редкого краснокнижного вида — <strong class="text-slate-800">сибирского тайменя</strong> и хариуса.
+                        </p>
+                        <span class="inline-block bg-emerald-50 text-emerald-700 text-xs px-3 py-1 rounded-full font-medium">Защищенная водная система</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIODIVERSITY (FLORA & FAUNA) -->
+    <section id="nature" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-emerald-600 font-bold mb-3">Богатство Экосистем</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-bold text-slate-900">Биологическое разнообразие</p>
+                <div class="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- FOREST STRUCTURE BAR -->
+            <div class="bg-slate-900 text-white p-8 rounded-3xl mb-16 shadow-xl">
+                <h3 class="font-serif text-2xl font-bold text-emerald-400 mb-2">Лесные экосистемы (~65% территории)</h3>
+                <p class="text-slate-400 text-sm mb-6">Состав и доминирующие породы деревьев в лесах Западно-Алтайского заповедника:</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-xs sm:text-sm font-semibold mb-1">
+                            <span>Пихта сибирская</span>
+                            <span class="text-emerald-400">27.0%</span>
+                        </div>
+                        <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-500 rounded-full" style="width: 27%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs sm:text-sm font-semibold mb-1">
+                            <span>Кедр сибирский (Сосна сибирская)</span>
+                            <span class="text-emerald-400">23.0%</span>
+                        </div>
+                        <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-600 rounded-full" style="width: 23%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs sm:text-sm font-semibold mb-1">
+                            <span>Лиственница сибирская</span>
+                            <span class="text-amber-400">15.5%</span>
+                        </div>
+                        <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-amber-500 rounded-full" style="width: 15.5%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs sm:text-sm font-semibold mb-1">
+                            <span>Ель сибирская</span>
+                            <span class="text-sky-400">13.9%</span>
+                        </div>
+                        <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-sky-500 rounded-full" style="width: 13.9%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPECIES GRID TOGGLES -->
+            <div class="flex justify-between items-center mb-8">
+                <h3 class="font-serif text-2xl font-bold text-slate-900">Флора и Фауна</h3>
+                <div class="flex space-x-2">
+                    <button id="filter-all" onclick="filterSpecies('all')" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-white shadow-sm">Все</button>
+                    <button id="filter-redbook" onclick="filterSpecies('redbook')" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200">Красная книга РК</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="species-card redbook bg-slate-50 border border-slate-200 p-6 rounded-2xl card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-seedling"></i></span>
+                        <span class="bg-red-100 text-red-700 text-xs px-2.5 py-1 rounded-full font-bold">Красная книга</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-1">Купальница алтайская</h4>
+                    <p class="text-xs text-slate-500 italic mb-3">Trollius altaicus</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Редкий эндемичный цветущий вид субальпийских и альпийских лугов Западного Алтая.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="species-card redbook bg-slate-50 border border-slate-200 p-6 rounded-2xl card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-feather-pointed"></i></span>
+                        <span class="bg-red-100 text-red-700 text-xs px-2.5 py-1 rounded-full font-bold">Красная книга</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-1">Беркут & Чёрный аист</h4>
+                    <p class="text-xs text-slate-500 italic mb-3">Aquila chrysaetos / Ciconia nigra</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        В заповеднике гнездятся хищные птицы: беркут, сапсан, балобан, филин и редкий чёрный аист.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="species-card all bg-slate-50 border border-slate-200 p-6 rounded-2xl card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-paw"></i></span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-bold">Фауна (52 вида)</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-1">Бурый медведь & Соболь</h4>
+                    <p class="text-xs text-slate-500 italic mb-3">Ursus arctos / Martes zibellina</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Типичные обитатели черневой тайги: бурый медведь, соболь, горностай, марал, косуля, лось и бурундук.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="species-card redbook bg-slate-50 border border-slate-200 p-6 rounded-2xl card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-leaf"></i></span>
+                        <span class="bg-red-100 text-red-700 text-xs px-2.5 py-1 rounded-full font-bold">Красная книга</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-1">Башмачок настоящий</h4>
+                    <p class="text-xs text-slate-500 italic mb-3">Cypripedium calceolus</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Один из 27 краснокнижных видов флоры заповедника, редкая горно-таёжная орхидея.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="species-card redbook bg-slate-50 border border-slate-200 p-6 rounded-2xl card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-fish-fins"></i></span>
+                        <span class="bg-red-100 text-red-700 text-xs px-2.5 py-1 rounded-full font-bold">Красная книга</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-1">Таймень & Нетопырь Иконникова</h4>
+                    <p class="text-xs text-slate-500 italic mb-3">Hucho taimen / Myotis ikonnikovi</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Охраняемые ценные представители ихтиофауны и рукокрылых животных Западного Алтая.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="species-card all bg-slate-50 border border-slate-200 p-6 rounded-2xl card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="w-10 h-10 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-crow"></i></span>
+                        <span class="bg-sky-100 text-sky-700 text-xs px-2.5 py-1 rounded-full font-bold">Орнитофауна (200+ видов)</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-1">Глухарь, Рябчик, Коршун</h4>
+                    <p class="text-xs text-slate-500 italic mb-3">Tetrao urogallus / Tetrastes bonasia</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Широко распространённые таёжные птицы, канюк, пустельга, куропатки и рябчики.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNESCO & CONSERVATION SECTION -->
+    <section id="unesco" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs uppercase tracking-widest px-3 py-1 rounded-full font-bold">Международный статус</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-4">Биосферный резерват ЮНЕСКО & Охрана</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- UNESCO Story -->
+            <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-3xl mb-12 backdrop-blur-md">
+                <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="w-20 h-20 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex-shrink-0 flex items-center justify-center text-amber-400 text-3xl">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-amber-400 mb-2">«Жемчужина Восточного Казахстана» (2020 г.)</h3>
+                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            В <strong>2020 году</strong> Заповедник официальным решением был включён во <strong>Всемирную сеть биосферных резерватов ЮНЕСКО</strong>. Это признание подчеркивает исключительную ценность территории как уникального перекрёстка природных зон Сибири и Средней Азии.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THREATS AND PROTECTION MEASURES -->
+            <h3 class="font-serif text-2xl font-bold text-emerald-400 mb-8 text-center sm:text-left">Охранные меры и защита территории</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Fire protection -->
+                <div class="bg-slate-800/50 border border-slate-700/80 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-red-500/20 text-red-400 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white">Противопожарный мониторинг</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                        Грозовые пожары в засушливые периоды ликвидируются в кратчайшие сроки (оперативность ликвидации возгораний в течение дня).
+                    </p>
+                    <span class="text-xs text-red-300 font-medium">Дистанционное слежение & Патрули</span>
+                </div>
+
+                <!-- Anti-poaching -->
+                <div class="bg-slate-800/50 border border-slate-700/80 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white">Защита от браконьерства</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                        Регулярные совместные оперативные рейды инспекторов, лесников и пограничников по защите кедровых шишек и животных.
+                    </p>
+                    <span class="text-xs text-amber-300 font-medium">Круглосуточное патрулирование</span>
+                </div>
+
+                <!-- Protection of young trees -->
+                <div class="bg-slate-800/50 border border-slate-700/80 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white">Охрана молодняка</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                        Спецрейды по пресечению незаконной рубки молодняка хвойных пород перед новогодними праздниками.
+                    </p>
+                    <span class="text-xs text-emerald-300 font-medium">Профилактическая работа</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECOTOURISM SECTION -->
+    <section id="tourism" class="py-20 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-emerald-600 font-bold mb-3">Посещение и Просвещение</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-bold text-slate-900">Экологический Туризм</p>
+                <div class="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-emerald-100 card-hover text-center">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Экологические Тропы</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Организованные познавательные маршруты и тропы для ознакомления с уникальным ландшафтом без ущерба для природы.
+                    </p>
+                    <button onclick="openModal('contactModal')" class="text-emerald-600 hover:text-emerald-700 font-semibold text-xs uppercase tracking-wider">Записаться на маршрут &rarr;</button>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-emerald-100 card-hover text-center">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Музей Природы</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Постоянная экспозиция с уникальными образцами флоры, фауны, минералов и интерактивными материалами про Рудный Алтай.
+                    </p>
+                    <button onclick="openModal('contactModal')" class="text-emerald-600 hover:text-emerald-700 font-semibold text-xs uppercase tracking-wider">Узнать график работы &rarr;</button>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-emerald-100 card-hover text-center">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-slate-900">Эко-Акции и Выставки</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Ежегодное проведение научно-просветительских мероприятий, лекций и выставок для школьников, студентов и гостей.
+                    </p>
+                    <button onclick="openModal('contactModal')" class="text-emerald-600 hover:text-emerald-700 font-semibold text-xs uppercase tracking-wider">Принять участие &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS & FOOTER -->
+    <footer id="contacts" class="bg-slate-950 text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                <div class="col-span-1 md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-mountain-sun text-lg"></i>
+                        </div>
+                        <span class="font-serif font-bold text-lg">Западно-Алтайский Заповедник</span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-md leading-relaxed">
+                        Государственное учреждение по сохранению уникальных таёжных и альпийских экосистем Рудного Алтая. Обладает международным статусом резервата ЮНЕСКО.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-emerald-400 text-sm uppercase tracking-wider mb-4">Навигация</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">О заповеднике</a></li>
+                        <li><a href="#geography" class="hover:text-white transition-colors">География и Климат</a></li>
+                        <li><a href="#nature" class="hover:text-white transition-colors">Флора и Фауна</a></li>
+                        <li><a href="#unesco" class="hover:text-white transition-colors">ЮНЕСКО & Охрана</a></li>
+                        <li><a href="#tourism" class="hover:text-white transition-colors">Экотуризм</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-emerald-400 text-sm uppercase tracking-wider mb-4">Контакты</h4>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-400">
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-location-dot mt-1 text-emerald-500"></i>
+                            <span>ВКО, Риддерский и Алтайский районы, Республика Казахстан</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-globe text-emerald-500"></i>
+                            <a href="#" class="hover:text-white">Раздел «Документы» (Скачать карту)</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-shield text-emerald-500"></i>
+                            <span>Статус: IUCN Ia / ЮНЕСКО</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>© 1992–2026 Западно-Алтайский государственный природный заповедник (Батыс Алтай қорығы).</p>
+                <p class="mt-2 sm:mt-0">Информационно-туристический веб-портал.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE MAP MODAL -->
+    <div id="mapModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 text-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button onclick="closeModal('mapModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <h3 class="font-serif text-2xl font-bold text-emerald-400 mb-2">Карта территории заповедника</h3>
+            <p class="text-slate-400 text-sm mb-6">Схема расположения ключевых хребтов, рек и информационных ресурсов</p>
+
+            <!-- Map View Box Placeholder -->
+            <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 relative overflow-hidden min-h-[320px] flex flex-col justify-between">
+                <div class="flex justify-between items-start z-10">
+                    <span class="bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-bold">Площадь: 86 122 га</span>
+                    <span class="text-xs text-slate-400">Координаты: Северо-восток ВКО</span>
+                </div>
+
+                <div class="my-8 text-center z-10">
+                    <i class="fa-solid fa-map-location-dot text-6xl text-emerald-500/40 mb-4 animate-bounce"></i>
+                    <h4 class="font-bold text-lg text-slate-200">Карта территории (Раздел «Документы»)</h4>
+                    <p class="text-xs text-slate-400 max-w-md mx-auto mt-2">
+                        Официальная подробная топографическая карта территории доступна на сайте заповедника.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs z-10">
+                    <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">хр. Ивановский</div>
+                    <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">хр. Линейский</div>
+                    <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">хр. Холзун</div>
+                    <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">хр. Коксинский</div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeModal('mapModal')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-2.5 rounded-xl transition-all text-sm">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT / INQUIRY MODAL -->
+    <div id="contactModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white text-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeModal('contactModal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Заявка на посещение</h3>
+            <p class="text-slate-600 text-sm mb-6">Заполните форму для получения информации об экскурсиях и посещении Музея Природы.</p>
+
+            <form onsubmit="event.preventDefault(); alert('Спасибо за обращение! Инспекция заповедника свяжется с вами.'); closeModal('contactModal');" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Ваше имя</label>
+                    <input type="text" required placeholder="Иван Иванов" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Телефон / Email</label>
+                    <input type="text" required placeholder="+7 (700) 000-00-00" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Цель визита</label>
+                    <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 text-sm bg-white">
+                        <option>Экскурсия по экотропе</option>
+                        <option>Посещение Музея Природы</option>
+                        <option>Научные изыскания</option>
+                        <option>Другой вопрос</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 transition-all text-sm mt-2">
+                    Отправить запрос
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Tabs Logic for Geography Section
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            
+            // Reset tab button styling
+            const tabs = ['relief', 'climate', 'rivers'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}-btn`);
+                if (btn) {
+                    btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-md');
+                    btn.classList.add('text-slate-600');
+                }
+            });
+
+            // Activate current tab
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabName}-btn`);
+            activeBtn.classList.add('bg-emerald-600', 'text-white', 'shadow-md');
+            activeBtn.classList.remove('text-slate-600');
+        }
+
+        // Species Filter Logic
+        function filterSpecies(type) {
+            const allCards = document.querySelectorAll('.species-card');
+            const filterAllBtn = document.getElementById('filter-all');
+            const filterRedBookBtn = document.getElementById('filter-redbook');
+
+            if (type === 'all') {
+                allCards.forEach(c => c.classList.remove('hidden'));
+                filterAllBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-white shadow-sm';
+                filterRedBookBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200';
+            } else if (type === 'redbook') {
+                allCards.forEach(c => {
+                    if (c.classList.contains('redbook')) {
+                        c.classList.remove('hidden');
+                    } else {
+                        c.classList.add('hidden');
+                    }
+                });
+                filterRedBookBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-white shadow-sm';
+                filterAllBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200';
+            }
+        }
+
+        // Modal Controls
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
