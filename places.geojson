@@ -1,0 +1,201 @@
+{
+  "type": "FeatureCollection",
+  "name": "west_altai_places",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lineyskie",
+        "name": "Линейские столбы",
+        "kind": "Скальные останцы",
+        "description": "Гранитные останцы необычных форм на Линейском хребте — главная природная достопримечательность маршрута «Каменная сказка».",
+        "source": "https://www.silkadv.com/ru/node/2104",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%82%D0%BE%D0%BB%D0%B1%D1%8B.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%82%D0%BE%D0%BB%D0%B1%D1%8B.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.179058,
+          50.321097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "voroshilov",
+        "name": "Пик Ворошилова",
+        "kind": "Вершина",
+        "elevation_m": 2776,
+        "description": "Высочайшая точка Ивановского хребта. В автомобильном маршруте «Эталон Западного Алтая» на неё открываются обзорные виды.",
+        "source": "https://pereval.space/object/13678",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%A5%D1%80%D0%B5%D0%B1%D0%B5%D1%82_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%A5%D1%80%D0%B5%D0%B1%D0%B5%D1%82_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.83406,
+          50.29858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "kedrovoye",
+        "name": "Озеро Кедровое",
+        "kind": "Высокогорное озеро",
+        "elevation_m": 1881,
+        "description": "Одно из самых известных высокогорных озёр Западного Алтая, расположенное в районе Белоубинских озёр.",
+        "source": "https://mapcarta.com/15413370",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9A%D0%B5%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B5%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.14773,
+          50.297101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aleshkov-stream",
+        "name": "Алёшков Ключ",
+        "kind": "Ручей",
+        "elevation_m": 969,
+        "description": "Ручей в горной части Западного Алтая. Пеший маршрут «Алёшкины стёжки» проходит по его долине и поднимается к высокогорным озёрам в верхней части цирка.",
+        "source": "https://mapcarta.com/37209008",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%B2_%D0%B2%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D1%8C%D1%8F%D1%85_%D0%90%D0%BB%D1%91%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BB%D1%8E%D1%87%D0%B0.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%B2_%D0%B2%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D1%8C%D1%8F%D1%85_%D0%90%D0%BB%D1%91%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BB%D1%8E%D1%87%D0%B0.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.96134,
+          50.39112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "koksinsky-pass",
+        "name": "Коксинский перевал",
+        "kind": "Горный перевал",
+        "elevation_m": 1763,
+        "description": "Горный перевал на востоке района. Он служит географическим ориентиром для комбинированного маршрута к болоту Гульбище и Линейским столбам.",
+        "source": "https://mapcarta.com/N534093726",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%B1%D0%BE%D0%BB%D0%BE%D1%82%D0%BE_%D0%93%D1%83%D0%BB%D1%8C%D0%B1%D0%B8%D1%89%D0%B5.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%B1%D0%BE%D0%BB%D0%BE%D1%82%D0%BE_%D0%93%D1%83%D0%BB%D1%8C%D0%B1%D0%B8%D1%89%D0%B5.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.2447,
+          50.397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gonny-pass",
+        "name": "Гонный перевал",
+        "kind": "Горный ориентир",
+        "description": "Картографический ориентир к северу от озера Кедровое, в районе горных перевалов и долин Западного Алтая.",
+        "source": "https://mapcarta.com/N534093725",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9A%D0%B5%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B5%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.12916,
+          50.36634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bastion",
+        "name": "Скальная гряда Бастион",
+        "kind": "Скальная гряда",
+        "description": "Скальный выход на маршруте «Заповедные дали». С гряды открываются виды на горно-таёжные массивы Западного Алтая.",
+        "source": "https://www.infor.kz/novye-postupleniya/marshruty-zapadno-altayskogo-zapovednika.html",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%82%D0%BE%D0%BB%D0%B1%D1%8B.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%82%D0%BE%D0%BB%D0%B1%D1%8B.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.163,
+          50.333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "panorama",
+        "name": "Вершина Панорама",
+        "kind": "Смотровая вершина",
+        "description": "Вершина на маршруте «Заповедные дали», с которой осматривают горные леса и хребты Западного Алтая.",
+        "source": "https://www.infor.kz/novye-postupleniya/marshruty-zapadno-altayskogo-zapovednika.html",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%A5%D1%80%D0%B5%D0%B1%D0%B5%D1%82_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%A5%D1%80%D0%B5%D0%B1%D0%B5%D1%82_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.172,
+          50.338
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gulbishche",
+        "name": "Болото Гульбище",
+        "kind": "Высокогорное болото",
+        "elevation_m": 1870,
+        "description": "Крупный высокогорный болотный комплекс в водораздельной части истоков Чёрной Убы и Барсука. Входит в описание маршрута «Каменная сказка».",
+        "source": "https://www.zagpz.kz/marshruty-zagpz.html",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%B1%D0%BE%D0%BB%D0%BE%D1%82%D0%BE_%D0%93%D1%83%D0%BB%D1%8C%D0%B1%D0%B8%D1%89%D0%B5.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%B1%D0%BE%D0%BB%D0%BE%D1%82%D0%BE_%D0%93%D1%83%D0%BB%D1%8C%D0%B1%D0%B8%D1%89%D0%B5.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.202,
+          50.341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ozerny-cirque",
+        "name": "Цирк Озёрный",
+        "kind": "Высокогорные озёра",
+        "description": "В верхней части долины Алёшкова Ключа находится группа из трёх моренно-запрудных озёр. На плакате они обозначены как одна из главных природных точек маршрута «Алёшкины стёжки».",
+        "source": "https://www.infor.kz/novye-postupleniya/marshruty-zapadno-altayskogo-zapovednika.html",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%B2_%D0%B2%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D1%8C%D1%8F%D1%85_%D0%90%D0%BB%D1%91%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BB%D1%8E%D1%87%D0%B0.jpg?width=900",
+        "imagePage": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%B2_%D0%B2%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D1%8C%D1%8F%D1%85_%D0%90%D0%BB%D1%91%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BB%D1%8E%D1%87%D0%B0.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.03,
+          50.43
+        ]
+      }
+    }
+  ]
+}
