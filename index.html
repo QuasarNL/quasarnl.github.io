@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1712">
+<title>Западно-Алтайский заповедник</title>
+<meta name="description" content="Природа, ландшафты, растительный и животный мир Западно-Алтайского государственного природного заповедника.">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0b1712; --bg-deep:#06100c; --panel:#11241b; --panel-2:#162d22;
+  --line:rgba(226,239,222,.14); --text:#f0f4e9; --muted:#afbdaf;
+  --lime:#d8f078; --lime-strong:#c7e65b; --ink:#1a2519; --paper:#f1f0e7;
+  --serif:Georgia,"Times New Roman",serif; --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --max:1240px; --r-xl:30px; --r-lg:22px; --shadow:0 25px 80px rgba(0,0,0,.28)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,a{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+::selection{background:var(--lime);color:var(--bg-deep)}
+.wrap{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(8,20,14,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+.topbar-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:inline-flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{width:43px;height:43px;border:1px solid rgba(216,240,120,.42);border-radius:15px;display:grid;place-items:center;color:var(--lime);flex:none;background:linear-gradient(145deg,rgba(216,240,120,.12),rgba(216,240,120,.02))}
+.brand-mark svg{width:25px;height:25px}
+.brand-copy{display:grid;line-height:1.12;gap:5px}
+.brand-title{font-size:13px;letter-spacing:.09em;font-weight:800;text-transform:uppercase}
+.brand-subtitle{font-size:10px;color:#98a99a;letter-spacing:.14em;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{font-size:12px;letter-spacing:.04em;color:#c9d4c8;transition:color .2s}
+.nav a:hover{color:var(--lime)}
+.nav .nav-map{display:inline-flex;align-items:center;gap:9px;background:var(--lime);color:#172313;padding:12px 17px;border-radius:999px;font-weight:800}
+.nav-map svg{width:15px;height:15px}
+.menu-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:14px;background:#112219;color:var(--text);font-size:22px;align-items:center;justify-content:center}
+.hero{padding:34px 0 0}
+.hero-panel{position:relative;isolation:isolate;overflow:hidden;min-height:570px;border:1px solid rgba(225,242,214,.12);border-radius:var(--r-xl);background:radial-gradient(ellipse at 77% 42%,rgba(79,119,71,.28),transparent 36%),linear-gradient(118deg,#12271c 0%,#0e2017 47%,#102219 100%);display:grid;grid-template-columns:1.02fr .98fr;align-items:center;box-shadow:var(--shadow)}
+.hero-panel:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.22;background-image:url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+.hero-copy{position:relative;z-index:2;padding:clamp(32px,5.5vw,76px) 0 clamp(40px,6vw,80px) clamp(28px,5.7vw,78px)}
+.kicker{display:flex;align-items:center;gap:11px;color:var(--lime);font-size:10px;letter-spacing:.19em;text-transform:uppercase;font-weight:800}
+.kicker:before{content:"";width:27px;height:1px;background:var(--lime)}
+.hero h1{font-size:clamp(48px,6.3vw,88px);line-height:.99;letter-spacing:-.075em;font-weight:680;max-width:720px;margin:26px 0 25px}
+.hero h1 em{font-family:var(--serif);font-weight:400;color:var(--lime);letter-spacing:-.08em}
+.hero-lead{color:#bdcbbd;font-size:clamp(15px,1.35vw,18px);line-height:1.75;max-width:495px;margin:0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:33px}
+.btn{min-height:49px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 20px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.015em;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--lime);color:#142010;border:1px solid var(--lime)}.btn-primary:hover{background:#e3f89a}
+.btn-ghost{background:rgba(255,255,255,.03);border:1px solid rgba(232,244,224,.23);color:var(--text)}.btn-ghost:hover{border-color:var(--lime);background:rgba(216,240,120,.06)}
+.btn svg{width:16px;height:16px}
+.hero-visual{position:relative;min-height:530px;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.terrain-svg{width:120%;max-width:770px;position:absolute;right:-10%;top:50%;transform:translateY(-48%);height:auto;opacity:.98}
+.visual-stamp{position:absolute;right:9%;top:14%;width:119px;height:119px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(216,240,120,.55);background:rgba(7,18,12,.4);color:var(--lime);font-size:9px;line-height:1.6;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transform:rotate(9deg);box-shadow:0 0 0 10px rgba(216,240,120,.035)}
+.visual-caption{position:absolute;right:8%;bottom:14%;display:flex;gap:12px;align-items:center;font-size:10px;letter-spacing:.13em;color:#a9b8a9;text-transform:uppercase}
+.visual-caption:before{content:"";width:32px;height:1px;background:var(--lime)}
+.hero-bottom{display:flex;justify-content:space-between;align-items:center;gap:24px;margin:21px 10px 0;color:#a3b2a4;font-size:10px;text-transform:uppercase;letter-spacing:.13em}
+.hero-bottom strong{font-weight:700;color:#dbe5d9}
+.scroll-cue{display:inline-flex;align-items:center;gap:10px}.scroll-cue span{width:28px;height:28px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--lime);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:54px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.stat{background:#0f2118;min-height:138px;padding:25px 30px;display:flex;flex-direction:column;justify-content:space-between}
+.stat-top{display:flex;align-items:center;justify-content:space-between;gap:16px;color:#a6b7a7;font-size:10px;letter-spacing:.15em;text-transform:uppercase}
+.stat-icon{color:var(--lime);font-size:18px;font-weight:500}
+.stat strong{font-size:clamp(27px,3vw,39px);line-height:1.1;letter-spacing:-.055em;font-weight:650}
+.stat strong small{font-size:13px;letter-spacing:0;font-weight:600;color:var(--lime);margin-left:4px}
+.stat p{margin:8px 0 0;font-size:12px;color:#9cad9d}
+.section{padding:clamp(78px,10vw,132px) 0 0}
+.section-topline{display:flex;align-items:center;gap:12px;color:var(--lime);font-size:10px;text-transform:uppercase;letter-spacing:.19em;font-weight:800}
+.section-topline:before{content:"";width:25px;height:1px;background:var(--lime)}
+.section-heading{display:grid;grid-template-columns:1fr minmax(230px,420px);gap:30px;align-items:end;margin:18px 0 34px}
+.section-heading h2{font-size:clamp(36px,5vw,61px);line-height:1.04;letter-spacing:-.065em;font-weight:620;margin:0;max-width:760px}
+.section-heading h2 em{font-family:var(--serif);font-weight:400;color:var(--lime)}
+.section-heading p{margin:0;color:var(--muted);font-size:14px;line-height:1.85;max-width:425px}
+.feature-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.feature-main{position:relative;min-height:390px;overflow:hidden;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(27px,4vw,48px);background:linear-gradient(145deg,#183326,#102319 76%)}
+.feature-main:after{content:"";position:absolute;width:370px;height:370px;border:1px solid rgba(216,240,120,.18);border-radius:50%;right:-120px;bottom:-160px;box-shadow:0 0 0 28px rgba(216,240,120,.025),0 0 0 60px rgba(216,240,120,.025),0 0 0 95px rgba(216,240,120,.018)}
+.feature-number{font-family:var(--serif);font-size:60px;line-height:1;color:var(--lime);opacity:.96}
+.feature-main h3{font-size:clamp(24px,3vw,34px);line-height:1.15;letter-spacing:-.045em;margin:38px 0 12px;max-width:400px}
+.feature-main p{color:#b7c7b8;font-size:14px;line-height:1.85;max-width:440px;margin:0}
+.feature-meta{position:absolute;left:clamp(27px,4vw,48px);bottom:28px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#96aa98}
+.feature-side{display:grid;gap:18px}
+.info-card{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:24px;border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(145deg,#12251b,#0f2017);min-height:180px;align-content:start}
+.info-icon{width:48px;height:48px;border:1px solid rgba(216,240,120,.3);border-radius:16px;display:grid;place-items:center;color:var(--lime);background:rgba(216,240,120,.055)}
+.info-icon svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.info-card h3{margin:2px 0 7px;font-size:18px;letter-spacing:-.03em}
+.info-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+.route-section{padding-bottom:0}
+.route-heading{margin-bottom:28px}
+.route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.route-card{position:relative;display:flex;flex-direction:column;min-height:228px;border:1px solid var(--line);border-radius:20px;padding:24px;background:linear-gradient(145deg,#11231a,#0d1c14);transition:transform .22s,border-color .22s,background .22s;overflow:hidden}
+.route-card:hover{transform:translateY(-4px);border-color:rgba(216,240,120,.45);background:linear-gradient(145deg,#172d20,#102218)}
+.route-card:before{content:"";position:absolute;right:-18px;top:-27px;width:105px;height:105px;border:1px solid rgba(216,240,120,.1);border-radius:50%;box-shadow:0 0 0 16px rgba(216,240,120,.025),0 0 0 34px rgba(216,240,120,.02)}
+.route-card-top{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
+.route-number{font-size:10px;letter-spacing:.15em;color:#93a696}
+.route-dot{width:9px;height:9px;border-radius:50%;background:var(--route);box-shadow:0 0 0 5px color-mix(in srgb,var(--route) 15%,transparent)}
+.route-card h3{font-size:20px;line-height:1.25;letter-spacing:-.035em;margin:30px 0 9px;position:relative}
+.route-card p{color:#a8b8aa;font-size:12px;line-height:1.7;margin:0 0 24px;position:relative}
+.route-foot{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--lime)}
+.route-foot span:last-child{font-size:16px;transition:transform .2s}.route-card:hover .route-foot span:last-child{transform:translate(3px,-3px)}
+.map-section{padding-top:clamp(82px,10vw,130px)}
+.map-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:25px}
+.map-intro .section-heading{display:block;margin:17px 0 0;max-width:700px}
+.map-intro .section-heading h2{max-width:640px}
+.map-side-copy{max-width:290px;font-size:13px;line-height:1.8;color:var(--muted);margin:0 0 5px}
+.map-shell{height:min(78vh,760px);min-height:480px;overflow:hidden;border:1px solid rgba(216,240,120,.24);border-radius:var(--r-xl);background:#e6e9dd;box-shadow:0 20px 70px #0004;position:relative}
+.map-shell iframe{display:block;width:100%;height:100%;border:0;background:#e6e9dd}
+.map-controls-note{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:13px;color:#9dad9f;font-size:11px;line-height:1.7}
+.map-hint{display:flex;align-items:center;gap:9px}.map-hint .pulse{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(216,240,120,.08)}
+.map-link{color:var(--lime);font-weight:750;white-space:nowrap}
+.care-band{margin-top:clamp(82px,10vw,132px);border:1px solid rgba(216,240,120,.18);border-radius:var(--r-xl);padding:clamp(30px,5vw,62px);background:linear-gradient(110deg,#182e21,#0d1e15);display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;position:relative;overflow:hidden}
+.care-band:after{content:"";position:absolute;width:330px;height:330px;border:1px solid rgba(216,240,120,.13);border-radius:50%;right:14%;top:-245px;box-shadow:0 0 0 25px rgba(216,240,120,.025),0 0 0 55px rgba(216,240,120,.025),0 0 0 85px rgba(216,240,120,.02)}
+.care-band h2{position:relative;z-index:1;font-size:clamp(25px,3.8vw,43px);line-height:1.12;letter-spacing:-.055em;margin:0 0 12px;max-width:690px}
+.care-band p{position:relative;z-index:1;margin:0;color:#b4c4b4;max-width:650px;font-size:13px;line-height:1.8}
+.care-tag{position:relative;z-index:1;display:grid;place-items:center;width:106px;height:106px;border:1px solid rgba(216,240,120,.5);border-radius:50%;color:var(--lime);font-family:var(--serif);font-size:37px;transform:rotate(-9deg)}
+.footer{padding:34px 0 30px;margin-top:55px;border-top:1px solid var(--line)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.footer-brand{display:flex;align-items:center;gap:11px;font-size:11px;color:#c3d0c2}
+.footer-brand .mini{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;color:var(--lime)}
+.footer-note{font-size:10px;color:#7f9282;max-width:560px;text-align:right;line-height:1.7}
+.reveal{animation:rise .8s both}.delay-1{animation-delay:.12s}.delay-2{animation-delay:.22s}
+@keyframes rise{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:940px){.wrap{width:min(var(--max),calc(100% - 40px))}.hero-panel{grid-template-columns:1.08fr .92fr;min-height:520px}.hero h1{font-size:clamp(44px,7.2vw,70px)}.hero-visual{min-height:450px}.visual-stamp{width:94px;height:94px;right:6%;font-size:8px}.route-grid{grid-template-columns:repeat(2,1fr)}.section-heading{grid-template-columns:1fr;gap:13px}.section-heading p{max-width:650px}}
+@media(max-width:680px){html{scroll-padding-top:78px}.wrap{width:calc(100% - 28px)}.topbar-inner{min-height:72px;gap:14px}.brand-mark{width:38px;height:38px;border-radius:13px}.brand-title{font-size:10px;letter-spacing:.06em}.brand-subtitle{font-size:8px;letter-spacing:.1em}.menu-toggle{display:inline-flex}.nav{display:none;position:absolute;top:71px;left:14px;right:14px;padding:16px;background:#0c1d14;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);align-items:stretch;gap:0;flex-direction:column}.nav.open{display:flex}.nav a{padding:13px 8px;font-size:13px}.nav .nav-map{justify-content:center;margin-top:8px}.hero{padding-top:14px}.hero-panel{display:flex;flex-direction:column;align-items:stretch;min-height:0;border-radius:23px}.hero-copy{padding:35px 25px 25px}.hero h1{font-size:clamp(45px,12.4vw,66px);margin:21px 0 17px;letter-spacing:-.07em}.hero-lead{font-size:14px;line-height:1.75}.hero-actions{margin-top:24px}.btn{min-height:46px;padding:0 16px;font-size:11px}.hero-visual{min-height:270px;margin-top:-5px}.terrain-svg{width:125%;right:-8%;top:45%}.visual-stamp{top:3%;right:8%;width:78px;height:78px;font-size:7px}.visual-caption{bottom:9%;right:9%;font-size:8px}.hero-bottom{margin:15px 4px 0;align-items:flex-start;font-size:8px;letter-spacing:.08em}.scroll-cue{gap:7px}.scroll-cue span{width:24px;height:24px}.stats{margin-top:30px;grid-template-columns:1fr;gap:1px;border-radius:18px}.stat{min-height:110px;padding:20px 22px}.stat strong{font-size:32px}.stat-top{font-size:9px}.section{padding-top:78px}.section-heading{margin:15px 0 25px}.section-heading h2{font-size:clamp(34px,9vw,48px)}.section-heading p{font-size:13px}.feature-grid{grid-template-columns:1fr}.feature-main{min-height:350px;padding:27px}.feature-number{font-size:48px}.feature-main h3{margin-top:33px;font-size:28px}.feature-meta{left:27px;bottom:23px}.feature-side{gap:12px}.info-card{padding:19px;grid-template-columns:44px 1fr;gap:14px;min-height:0}.info-icon{width:42px;height:42px;border-radius:14px}.route-section{padding-top:76px}.route-grid{grid-template-columns:1fr;gap:10px}.route-card{min-height:198px;padding:21px}.route-card h3{margin-top:22px}.map-section{padding-top:78px}.map-intro{display:block}.map-intro .section-heading{margin-top:15px}.map-side-copy{margin:17px 0 0}.map-shell{height:69vh;min-height:440px;border-radius:19px}.map-controls-note{align-items:flex-start;flex-direction:column;gap:5px}.care-band{margin-top:75px;padding:27px;grid-template-columns:1fr;gap:21px;border-radius:22px}.care-band h2{font-size:30px}.care-tag{width:65px;height:65px;font-size:26px;justify-self:start}.footer{margin-top:43px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-note{text-align:left}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Calm dropdown navigation available on both desktop and mobile. */
+.topbar-inner{position:relative}
+.menu-toggle{display:inline-flex;flex:none;cursor:pointer}
+.nav{display:none;position:absolute;z-index:80;top:calc(100% + 10px);right:0;left:auto;width:min(315px,calc(100vw - 32px));padding:11px;background:#0c1d14;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);align-items:stretch;gap:0;flex-direction:column}
+.nav.open{display:flex}
+.nav a{display:flex;align-items:center;padding:13px 11px;font-size:13px;color:#d9e3d6;border-radius:11px}
+.nav a:hover{background:rgba(216,240,120,.07)}
+.nav .nav-map{display:flex;justify-content:center;margin-top:7px;padding:13px;background:var(--lime);color:#172313}
+.nav .nav-map:hover{background:#e3f89a;color:#172313}
+.biodiversity-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.bio-card{min-height:330px;padding:26px;border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(145deg,#12251b,#0e1d14);display:flex;flex-direction:column}
+.bio-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);font-weight:800}
+.bio-card>strong{display:block;font-size:42px;line-height:1.1;letter-spacing:-.06em;margin:27px 0 14px}
+.bio-card>strong small{font-size:13px;letter-spacing:0;color:var(--lime);font-weight:700}
+.bio-card h3{font-size:20px;line-height:1.2;letter-spacing:-.035em;margin:0 0 12px}
+.bio-card p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
+.bio-foot{border-top:1px solid var(--line);padding-top:13px;margin-top:auto;margin-top:20px;color:#a9bc9e;font-size:11px;line-height:1.65}
+.biosphere-band{display:grid;grid-template-columns:56px 1fr;gap:19px;align-items:start;padding:25px;margin-top:14px;border:1px solid rgba(216,240,120,.19);border-radius:var(--r-lg);background:linear-gradient(110deg,rgba(216,240,120,.07),rgba(16,34,24,.65))}
+.biosphere-mark{width:48px;height:48px;border:1px solid rgba(216,240,120,.35);border-radius:16px;display:grid;place-items:center;color:var(--lime);font-size:23px}
+.biosphere-band h3{font-size:19px;margin:0 0 5px;letter-spacing:-.025em}
+.biosphere-band p{margin:0;max-width:770px;color:var(--muted);font-size:13px;line-height:1.8}
+.route-card{min-height:200px;cursor:default}
+@media(max-width:940px){.biodiversity-grid{grid-template-columns:1fr 1fr}.bio-card:last-child{grid-column:1/-1}}
+@media(max-width:680px){.nav{top:calc(100% + 8px);left:auto;right:0;width:min(315px,calc(100vw - 28px));padding:9px}.nav a{font-size:13px}.biodiversity-grid{grid-template-columns:1fr}.bio-card,.bio-card:last-child{min-height:0;grid-column:auto;padding:23px}.bio-card>strong{margin:20px 0 11px;font-size:37px}.biosphere-band{grid-template-columns:1fr;padding:22px;gap:13px}.route-card{min-height:0}}
+
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top" aria-label="Западный Алтай — на главную">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M3 25.5 12.4 8l5.3 9.1 3.1-5.1L29 25.5H3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9.7 13.1 2.7 2.8 2.1-1.2M18.8 16.7l2 2.1 1.6-.8" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/><path d="M5 28.5h22" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+      <span class="brand-copy"><span class="brand-title">Западный Алтай</span><span class="brand-subtitle">Государственный заповедник</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="primaryNav">☰</button>
+    <nav class="nav" id="primaryNav" aria-label="Основная навигация">
+      <a href="#about">О заповеднике</a>
+      <a href="#landscape">Ландшафты</a>
+      <a href="#flora-fauna">Флора и фауна</a>
+      <a href="#routes">Маршруты</a>
+      <a class="nav-map" href="map.html">Карта маршрутов <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-panel">
+      <div class="hero-copy">
+        <div class="kicker reveal">Восточный Казахстан · Рудный Алтай</div>
+        <h1 id="hero-title" class="reveal delay-1">Здесь природа<br>остаётся <em>дикой.</em></h1>
+        <p class="hero-lead reveal delay-2">Горно-таёжные леса, истоки прозрачных рек и высокогорные ландшафты. Западно-Алтайский заповедник создан, чтобы сохранить естественную жизнь этого края.</p>
+        <div class="hero-actions reveal delay-2">
+          <a class="btn btn-primary" href="#about">О заповеднике <span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Стилизованная иллюстрация горных хребтов и линий рельефа" role="img">
+        <svg class="terrain-svg" viewBox="0 0 760 650" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="ridgeA" x1="380" y1="90" x2="380" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#a6c57a" stop-opacity=".73"/><stop offset="1" stop-color="#3e6e4e" stop-opacity=".05"/></linearGradient>
+            <linearGradient id="ridgeB" x1="380" y1="270" x2="380" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#597f57" stop-opacity=".85"/><stop offset="1" stop-color="#193e2a" stop-opacity=".25"/></linearGradient>
+            <radialGradient id="sun" cx="0" cy="0" r="1" gradientTransform="matrix(1.8 130 -130 1.8 500 150)" gradientUnits="userSpaceOnUse"><stop stop-color="#d8f078" stop-opacity=".25"/><stop offset="1" stop-color="#d8f078" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="500" cy="170" r="160" fill="url(#sun)"/>
+          <circle cx="500" cy="170" r="47" stroke="#d8f078" stroke-opacity=".48"/>
+          <circle cx="500" cy="170" r="59" stroke="#d8f078" stroke-opacity=".16"/>
+          <path d="M34 409 159 301 225 346 349 173 420 275 481 227 580 337 650 287 740 389V650H34V409Z" fill="url(#ridgeA)"/>
+          <path d="m349 173 30 70 25-31 16 63-71-102Z" fill="#e5f0d5" fill-opacity=".75"/>
+          <path d="m225 346 124-173 71 102 61-48 99 110 70-50 90 102" stroke="#e0edc3" stroke-opacity=".68" stroke-width="1.2"/>
+          <path d="M4 452 147 354 208 395 316 292 376 345 468 306 547 392 647 347 756 424V650H4V452Z" fill="url(#ridgeB)"/>
+          <path d="M1 478 146 382 209 420 315 319 378 373 466 331 551 415 652 371 760 448" stroke="#bdd59c" stroke-opacity=".56" stroke-width="1.2"/>
+          <path d="M0 510C90 453 140 478 210 449S321 413 405 446s144 2 208-5 102 20 147 35" stroke="#d8f078" stroke-opacity=".42" stroke-width="1.1"/>
+          <path d="M0 535c100-58 158-35 223-59s120-28 194 1 136 4 197-7 101 13 146 27" stroke="#d8f078" stroke-opacity=".28"/>
+          <path d="M0 562c90-49 169-42 230-61s128-14 189 7 129 7 192-1 105 8 143 21" stroke="#d8f078" stroke-opacity=".23"/>
+          <path d="M0 586c86-38 160-43 231-54s130 1 189 15 126 7 193 2 104 6 147 17" stroke="#d8f078" stroke-opacity=".2"/>
+          <path d="M57 650c39-57 92-71 139-83s70-37 94-64 66-28 87-12 39 47 80 57 82 4 122-16 69-12 113 1" stroke="#d8f078" stroke-opacity=".22"/>
+          <path d="M99 650c34-45 80-55 119-66s70-35 92-57 51-20 67-8 34 39 70 47 78 4 113-12 61-11 94 0" stroke="#d8f078" stroke-opacity=".2"/>
+          <path d="M142 650c28-32 63-42 94-51s63-28 82-45 36-15 49-5 27 30 59 37 64 2 93-10 49-8 75 2" stroke="#d8f078" stroke-opacity=".17"/>
+          <g fill="#d8f078" fill-opacity=".72"><circle cx="159" cy="301" r="3"/><circle cx="349" cy="173" r="3"/><circle cx="481" cy="227" r="3"/><circle cx="650" cy="287" r="3"/></g>
+        </svg>
+        <div class="visual-stamp">Дикая<br>природа<br>с 1992 года</div>
+        <div class="visual-caption">Горная тайга · Высокогорье</div>
+      </div>
+    </div>
+    <div class="hero-bottom"><span><strong>Западно-Алтайский</strong> государственный природный заповедник</span><a href="#about" class="scroll-cue"><span>↓</span> Листайте, чтобы узнать больше</a></div>
+  </section>
+
+  <section class="wrap" aria-label="Ключевые факты о заповеднике">
+    <div class="stats">
+      <article class="stat"><div class="stat-top">Охраняемая территория <span class="stat-icon">↗</span></div><strong>86 122 <small>га</small></strong><p>Площадь государственного заповедника</p></article>
+      <article class="stat"><div class="stat-top">Год основания <span class="stat-icon">✳</span></div><strong>1992</strong><p>Заповедник создан 3 июля</p></article>
+      <article class="stat"><div class="stat-top">Рельеф и география <span class="stat-icon">⌁</span></div><strong>4 хребта</strong><p>Ивановский · Линейский · Холзун · Коксинский</p></article>
+    </div>
+  </section>
+
+  <section class="section wrap" id="about">
+    <span id="landscape" aria-hidden="true" style="scroll-margin-top:100px"></span>
+    <div class="section-topline">О заповеднике</div>
+    <div class="section-heading"><h2>Место, где главный герой — <em>ландшафт.</em></h2><p>Заповедник расположен в горах Рудного Алтая. Его задача — сохранять природные комплексы, биологическое разнообразие и естественный ход природных процессов.</p></div>
+    <div class="feature-grid">
+      <article class="feature-main">
+        <div class="feature-number">01</div>
+        <h3>Большая территория.<br>Хрупкое равновесие.</h3>
+        <p>От густой горной тайги до открытых высокогорных участков — разные условия создают местообитания для множества видов растений и животных. Охрана этой среды помогает природным системам оставаться целостными.</p>
+        <div class="feature-meta">Сохранение · Изучение · Наблюдение</div>
+      </article>
+      <div class="feature-side">
+        <article class="info-card">
+          <div class="info-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 6 18h7l-3 10 13-16h-7l3-8Z"/><path d="M3 29h26"/></svg></div>
+          <div><h3>Горные хребты</h3><p>Ивановский, Линейский, Холзун и Коксинский формируют выразительный рельеф и панорамы Западного Алтая.</p></div>
+        </article>
+        <article class="info-card">
+          <div class="info-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3 5 17h7l-2 12 12-17h-7l1-9Z"/><path d="M7 28h18"/></svg></div>
+          <div><h3>Горно-таёжные леса</h3><p>Хвойные лесные массивы — одна из характерных черт местных природных комплексов.</p></div>
+        </article>
+        <article class="info-card">
+          <div class="info-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 8c5 0 5 5 10 5s5-5 10-5h4M4 16c5 0 5 5 10 5s5-5 10-5h4M4 24c5 0 5 4 10 4s5-4 10-4h4"/></svg></div>
+          <div><h3>Истоки рек</h3><p>На территории берут начало Белая Уба, Чёрная Уба, Тургусун и его приток Барсук.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section wrap" id="flora-fauna">
+    <div class="section-topline">Живая природа</div>
+    <div class="section-heading"><h2>Целый мир, <em>сохранённый в горах.</em></h2><p>Горные леса, луга, каменистые склоны и влажные долины образуют мозаику мест обитания. Здесь охраняют не отдельные уголки, а целостные природные сообщества.</p></div>
+    <div class="biodiversity-grid">
+      <article class="bio-card">
+        <div class="bio-label">Растительный мир</div>
+        <strong>889 <small>видов</small></strong>
+        <h3>Растения Западного Алтая</h3>
+        <p>В заповеднике описаны сотни видов сосудистых растений. Среди характерных сообществ — кедрово-пихтовые леса, тёмнохвойная тайга, субальпийские и альпийские луга, горная тундра.</p>
+        <div class="bio-foot">27 видов растений занесены в Красную книгу Казахстана</div>
+      </article>
+      <article class="bio-card">
+        <div class="bio-label">Животный мир</div>
+        <strong>165 <small>видов птиц</small></strong>
+        <h3>Обитатели лесов и гор</h3>
+        <p>В лесах встречаются бурый медведь, рысь, соболь, лось, марал и косуля. На территории заповедника зарегистрированы десятки видов млекопитающих и множество лесных и хищных птиц.</p>
+        <div class="bio-foot">В том числе редкие виды, нуждающиеся в особой охране</div>
+      </article>
+      <article class="bio-card">
+        <div class="bio-label">Вода и высота</div>
+        <strong>4 <small>реки</small></strong>
+        <h3>Вода, формирующая ландшафт</h3>
+        <p>В горах берут начало Белая Уба, Чёрная Уба, Тургусун и его приток Барсук. Речные долины, высокогорные озёра и влажные участки поддерживают разнообразие местной жизни.</p>
+        <div class="bio-foot">Верховья бассейна Иртыша</div>
+      </article>
+    </div>
+    <div class="biosphere-band">
+      <div class="biosphere-mark" aria-hidden="true">✳</div>
+      <div><h3>Природное наследие мирового значения</h3><p>В 2020 году Западно-Алтайский заповедник включён во Всемирную сеть биосферных резерватов программы ЮНЕСКО «Человек и биосфера».</p></div>
+    </div>
+  </section>
+
+  <section class="section route-section wrap" id="routes">
+    <div class="section-topline">В пути по Западному Алтаю</div>
+    <div class="section-heading route-heading"><h2>Несколько способов увидеть <em>этот край.</em></h2><p>Каждый маршрут раскрывает свою часть горного края: речные долины, лесные массивы, скальные останцы и высокогорные озёра.</p></div>
+    <div class="route-grid">
+      <article class="route-card" style="--route:#c68455"><div class="route-card-top"><span class="route-number">МАРШРУТ / 01</span><span class="route-dot"></span></div><h3>Эталон Западного Алтая</h3><p>Ивановский хребет, дороги к кордонам Белая Уба и Чёрная Уба.</p></article>
+      <article class="route-card" style="--route:#d8b84b"><div class="route-card-top"><span class="route-number">МАРШРУТ / 02</span><span class="route-dot"></span></div><h3>Каменная сказка</h3><p>Линейские столбы, необычные скальные формы и высокогорные озёра.</p></article>
+      <article class="route-card" style="--route:#61954d"><div class="route-card-top"><span class="route-number">МАРШРУТ / 03</span><span class="route-dot"></span></div><h3>Убинские перекаты</h3><p>Речные перекаты, лесные массивы и долина Чёрной Убы.</p></article>
+      <article class="route-card" style="--route:#cd7795"><div class="route-card-top"><span class="route-number">МАРШРУТ / 04</span><span class="route-dot"></span></div><h3>Алёшкины стёжки</h3><p>Долина Алёшкова Ключа и группа высокогорных озёр в цирке Озёрный.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="care-band"><div><h2>Сохранить природу — значит оставить ей пространство.</h2><p>Заповедник существует для охраны и изучения природных комплексов. Бережное отношение к ландшафту, тишина и соблюдение установленных правил помогают не нарушать жизнь диких мест.</p></div><div class="care-tag" aria-hidden="true">ALT<br>∞</div></div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><div class="footer-brand"><span class="mini" aria-hidden="true">⌁</span><span>Западно-Алтайский государственный природный заповедник</span></div><div class="footer-note">Берегите горные леса, чистоту рек и покой диких животных.</div></div></footer>
+<script>
+(function(){
+  const toggle=document.getElementById('menuToggle');
+  const nav=document.getElementById('primaryNav');
+  if(!toggle||!nav)return;
+  toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');toggle.textContent=open?'×':'☰';});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Открыть меню');toggle.textContent='☰';}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Открыть меню');toggle.textContent='☰';}});
+})();
+</script>
+</body>
+</html>
